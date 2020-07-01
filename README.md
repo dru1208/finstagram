@@ -26,3 +26,40 @@ We suggest our students use [GitPod](https://www.gitpod.io/) to work on this pro
 4. You'll see _Open Preview_ and _Open Browser_, either of which will allow you to open your project in a new window or tab or preview pane. Go ahead and click on your preference (or try both at first to see which one you prefer).
 
 You're now set up and ready to work on this project!
+
+
+
+Deployment Instructions
+
+Guide for Heroku
+inside of your finstagram directory (top level of the directory):
+create files called:
+.gitpod.yml
+.gitpod.Dockerfile
+inside of the yml file, copy and paste the following:
+image:
+  file: /.gitpod.Dockerfile
+inside the Dockerfile, copy and paste the following:
+FROM gitpod/workspace-full
+USER gitpod
+RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sudo sh
+
+run the following commands
+1. git add .
+2. git commit -m "added configuration files"
+3. git push origin master
+NOTE:
+if there is an error with the push (403 error), go to the following url:
+https://gitpod.io/access-control/
+tick the check box for "write public repos", and press update
+don't forget to run "git push origin master" again after this!
+open a new tab, and access the following url:
+https://gitpod.io/#[your github repo url]
+example:
+https://gitpod.io/#https://github.com/dru1208/finstagram/
+after your workspace loads, type in the terminal:
+heroku --version
+you should see a version number show up
+continue along with the instructions in this link:
+https://github.com/MaggieMoss/sinatra-deployment-guide
+Collapse
