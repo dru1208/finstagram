@@ -1,0 +1,1 @@
+User.create(username: 'Andrew', avatar_url: 'image_link', email: 'andrewhsieh1208@gmail.com', password: 'password')
